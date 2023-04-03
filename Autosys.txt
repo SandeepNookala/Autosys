@@ -1,0 +1,42 @@
+
+
+autosys:
+========
+Autosys is an automated job controlling tool used for scheduling, monitoring and reporting jobs. 
+These jobs can be present in any Autosys configured machine and is connected to a network.
+
+
+Autosys architecture:
+=====================
+Remote agent – This is a process that is activated by the event processor to run a task. 
+This task will be run on a remote machine.
+
+Event Server – This is the database that contains the job definitions and job events.
+
+Event processor – This is used to go through all the events and processes, for processing them.
+
+
+
+JIL (Job Information Language)
+
+1.search autosys jobs:
+---------------------
+ops test3 jil %streamkey%
+
+2.Force Start Job:
+----------------
+ops test3 sfj jil <job name>
+
+3.job on hold:
+------------
+ops test3 joh jil <job name>
+
+3.describe job details:
+-----------------------
+ops test3 jil <job name> -q
+
+4. summery report or detailed report of job:
+--------------------------------------------
+ops test3 jil <job name> -s
+ops test3 jil <job name> -d
+
